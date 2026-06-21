@@ -112,13 +112,22 @@ def _pick_source_text(result) -> str:
 # ──────────────────────────────────────────────────────────────────────────────
 
 _TS_W   = 19   # "2026-05-22 14:24:58"
+_FN_W   = 28
 _SH_W   = 5    # "DAY  " / "NIGHT"
 _SEP    = " | "
 _MSG_W  = 90
 
 
 def _txt_rule_width() -> int:
-    return _TS_W + len(_SEP) + _SH_W + len(_SEP) + _MSG_W
+    return _TS_W + len(_SEP) + _FN_W + len(_SEP)+ _SH_W + len(_SEP) + _MSG_W
+
+def _truncate_filename(filename: str, width: int) -> str:                      # NEW FUNCTION
+    
+    if len(filename) <= width:
+        return filename
+    if width <= 1:
+        return filename[:width]
+    return "…" + filename[-(width - 1):]
 
 
 def _wrap_txt(text: str, width: int) -> list[str]:
@@ -141,12 +150,13 @@ def _wrap_txt(text: str, width: int) -> list[str]:
     return lines or [""]
 
 
-def _format_txt_record(dt: datetime, shift_code: str, message: str) -> str:
+def _format_txt_record(dt: datetime, filename: str,  shift_code: str, message: str) -> str:
     ts  = dt.strftime("%Y-%m-%d %H:%M:%S")
+    fn  = _truncate_filename(filename, _FN_W).ljust(_FN_W)[:_FN_W] 
     sh  = shift_code.ljust(_SH_W)[:_SH_W]
     wr  = _wrap_txt(message, _MSG_W)
-    ind = " " * _TS_W + _SEP + " " * _SH_W + _SEP
-    return "\n".join([ts + _SEP + sh + _SEP + wr[0]] + [ind + l for l in wr[1:]])
+    ind = " " * _TS_W + _SEP + " " * _FN_W + _SEP + " " * _SH_W + _SEP
+    return "\n".join([ts + _SEP + fn + _SEP+ sh + _SEP + wr[0]] + [ind + l for l in wr[1:]])
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -180,10 +190,11 @@ def build_report(
         display      = highlight_keywords(source_text.strip(), file_alerts, mode="txt")
         display      = " ".join(display.split())
         shift_code   = "DAY" if result.meta.shift_label == "Day Shift" else "NIGHT"
-        records.append(_format_txt_record(result.meta.modified_at, shift_code, display))
+        records.append(_format_txt_record(result.meta.modified_at, result.meta.filename, shift_code, display))
 
     col_hdr = (
         f"{'TIMESTAMP':<{_TS_W}}{_SEP}"
+        f"{'FILENAME':<{_FN_W}}{_SEP}"  
         f"{'SHIFT':<{_SH_W}}{_SEP}"
         f"MESSAGE"
     )
@@ -298,6 +309,7 @@ def _find_unicode_font() -> Optional[str]:
 
 # Column widths as fractions of the usable page width.
 _COL_TS_FRAC    = 0.155   # "2026-05-22 14:24:58" at 7.5 pt
+_COL_FN_FRAC    = 0.190   # filename — wraps onto 2 lines if long 
 _COL_SHIFT_FRAC = 0.090   # "NIGHT" fits at 7.5 pt
 # Message = remainder (~77.5 % of usable width)
 
@@ -359,8 +371,9 @@ def _build_pdf(
     usable_w = PAGE_W - ML - MR
 
     cw_ts    = usable_w * _COL_TS_FRAC
+    cw_fn    = usable_w * _COL_FN_FRAC 
     cw_shift = usable_w * _COL_SHIFT_FRAC
-    cw_msg   = usable_w - cw_ts - cw_shift
+    cw_msg   = usable_w - cw_ts - cw_fn- cw_shift
 
     # ── Paragraph styles ─────────────────────────────────────────────────────
     title_sty = ParagraphStyle(
@@ -398,6 +411,15 @@ def _build_pdf(
         leading=10,
         textColor=_color((0.20, 0.20, 0.20)),
         alignment=TA_LEFT,
+    )
+    fn_sty = ParagraphStyle(
+        "FnCell",
+        fontName=body_font,
+        fontSize=6.5,
+        leading=9,
+        textColor=_color((0.30, 0.30, 0.30)),
+        alignment=TA_LEFT,
+        wordWrap="CJK",
     )
 
     # wordWrap='CJK' allows intra-word breaks — critical for Indic/Arabic text
@@ -439,6 +461,7 @@ def _build_pdf(
     # Header row
     table_data = [[
         Paragraph("TIMESTAMP", col_hdr_sty),
+        Paragraph("FILENAME",  col_hdr_sty),
         Paragraph("SHIFT",     col_hdr_sty),
         Paragraph("MESSAGE",   col_hdr_sty),
     ]]
@@ -464,6 +487,7 @@ def _build_pdf(
 
         table_data.append([
             Paragraph(ts_str,    ts_sty),
+            Paragraph(_xml_safe(result.meta.filename), fn_sty),
             Paragraph(shift_str, shift_day_sty if is_day else shift_night_sty),
             Paragraph(safe_msg,  msg_sty),
         ])
@@ -505,7 +529,7 @@ def _build_pdf(
 
     table = Table(
         table_data,
-        colWidths=[cw_ts, cw_shift, cw_msg],
+        colWidths=[cw_ts, cw_fn,cw_shift, cw_msg],
         repeatRows=1,
         splitByRow=True,
         hAlign="LEFT",
@@ -514,7 +538,7 @@ def _build_pdf(
 
     # ── Footer callback ──────────────────────────────────────────────────────
     footer_font  = body_font
-    footer_label = "GPS CHEMOIL RADIO COMMUNICATION LOG — CONFIDENTIAL"
+    footer_label = "GPS CHEMOIL RADIO COMMUNICATION LOG"
 
     def _footer(canvas, doc):
         canvas.saveState()
