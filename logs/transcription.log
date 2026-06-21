@@ -2832,3 +2832,131 @@
 2026-06-20 13:56:43  WARNING   src.pipeline — 
 2026-06-20 13:56:43  DEBUG     httpcore.connection — close.started
 2026-06-20 13:56:43  DEBUG     httpcore.connection — close.complete
+2026-06-21 09:55:43  INFO      __main__ — ============================================================
+2026-06-21 09:55:43  INFO      __main__ —   GPS Chemoil — AI Radio Transcription Suite
+2026-06-21 09:55:43  INFO      __main__ — ============================================================
+2026-06-21 09:55:43  INFO      __main__ —   Folder : /Users/babyanvithagmail.com/Downloads/sample
+2026-06-21 09:55:43  INFO      __main__ —   Shift  : auto
+2026-06-21 09:55:43  INFO      __main__ —   Dry run: False
+2026-06-21 09:55:43  INFO      __main__ — ============================================================
+2026-06-21 09:55:43  INFO      src.pipeline — Step 1/4: Extracting metadata
+2026-06-21 09:55:43  INFO      src.ingestion.metadata — Found 1 audio file(s)
+2026-06-21 09:55:43  INFO      src.pipeline — 
+2026-06-21 09:55:43  INFO      src.pipeline — Preloading translation model …
+2026-06-21 09:55:48  INFO      src.transcription.translator — Loading translation tokenizer 'facebook/nllb-200-distilled-600M' …
+2026-06-21 09:55:48  DEBUG     httpcore.connection — connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=3 socket_options=None
+2026-06-21 09:55:48  DEBUG     httpcore.connection — connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1154f0440>
+2026-06-21 09:55:48  DEBUG     httpcore.connection — start_tls.started ssl_context=<ssl.SSLContext object at 0x11532a570> server_hostname='huggingface.co' timeout=3
+2026-06-21 09:55:48  DEBUG     httpcore.connection — start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1152cbc50>
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'GET']>
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:48 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"1385-Y8rr//XuUWwLSEAs3xBVYxJE/Ek"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767cc-226f8cc07be939aa21352cd8;0aa3bc14-e6be-4c71-8936-2bcb0023b9f1'), (b'RateLimit', b'"api";r=499;t=188'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'HxwwdZWyMl08Vf42Lz4cPQXzVn-XVyg4Yrlkanghxhwc7RLpwE8eJQ==')])
+2026-06-21 09:55:48  INFO      httpx — HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'GET']>
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:48  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:49  INFO      src.transcription.translator — Loading translation model 'facebook/nllb-200-distilled-600M' …
+2026-06-21 09:55:49  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:49  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:49  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'GET']>
+2026-06-21 09:55:49  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:49  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:50 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"237b-b67ulraBzH/Hl/PKIfyHuiXebco"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767ce-3eaff2aa685203496afc9dac;c2aae6fe-84cd-47ba-8357-5c4ff2e6afd2'), (b'RateLimit', b'"api";r=498;t=186'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'_8lLXZti_cDeqPKYBtrd2__NlTKcO0s-N8R3YojjrX1FtPtX3HA2xw==')])
+2026-06-21 09:55:50  INFO      httpx — HTTP Request: GET https://huggingface.co/api/models/facebook/nllb-200-distilled-600M "HTTP/1.1 200 OK"
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:50 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"15e6-awH1czJxWGRBIj+2004vKAtnaE8"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767ce-7fe44be2522804e14dadd86a;0d4e2b22-7801-40d8-974b-7135d8d754df'), (b'RateLimit', b'"api";r=497;t=186'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Total-Count', b'15'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'177MurD4BMOCdqw3YrlwBFaqQ6iCSZdpZhpMnlCYnYJUezkXsBKieg==')])
+2026-06-21 09:55:50  INFO      httpx — HTTP Request: GET https://huggingface.co/api/models/facebook/nllb-200-distilled-600M/commits/main "HTTP/1.1 200 OK"
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:50 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"7ba5-DgsOluRy2XkFCvw8iYzC8tCF+XM"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767ce-0334fd04122d190e1e5561f0;28e0e702-cfab-402b-ba34-6ddc23a100cf'), (b'RateLimit', b'"api";r=496;t=186'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'5U9Q0FQiGNjIu7D2Twsx6aCxl3fLgrwYRmqqhAijH7yhNzq54UhnVA==')])
+2026-06-21 09:55:50  INFO      httpx — HTTP Request: GET https://huggingface.co/api/models/facebook/nllb-200-distilled-600M/discussions?p=0 "HTTP/1.1 200 OK"
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'GET']>
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:50  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'GET']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:50 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"19ab-JRjglxXTyaWtkzuY7+KuKBYu7bs"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767ce-739e5aa272d65b7c502d5053;033025b5-c998-47fb-b5af-0ea0571e3fbe'), (b'RateLimit', b'"api";r=495;t=186'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Total-Count', b'16'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'ViSyihJ1EkdurAf_ieWA1fmG7zvkhqsHCuQ_9fOmF2My6kjmfwuB2A==')])
+2026-06-21 09:55:51  INFO      httpx — HTTP Request: GET https://huggingface.co/api/models/facebook/nllb-200-distilled-600M/commits/refs%2Fpr%2F45 "HTTP/1.1 200 OK"
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'GET']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — send_request_headers.started request=<Request [b'HEAD']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — send_request_headers.complete
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — send_request_body.started request=<Request [b'HEAD']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — send_request_body.complete
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_headers.started request=<Request [b'HEAD']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_headers.complete return_value=(b'HTTP/1.1', 404, b'Not Found', [(b'Content-Type', b'text/plain; charset=utf-8'), (b'Content-Length', b'15'), (b'Connection', b'keep-alive'), (b'Date', b'Sun, 21 Jun 2026 04:25:51 GMT'), (b'ETag', b'W/"f-mY2VvLxuxB7KhsoOdQTlMTccuAQ"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6a3767cf-03da44d4347a5a57732b2ea5;6533684a-07f5-40c7-931e-7d5598342645'), (b'RateLimit', b'"resolvers";r=2999;t=185'), (b'RateLimit-Policy', b'"fixed window";"resolvers";q=3000;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Repo-Commit', b'a3e77be725cf30383f1faeb8d2f0b0ea98ac554e'), (b'Accept-Ranges', b'bytes'), (b'X-Hub-Cache', b'MISS'), (b'X-Error-Code', b'EntryNotFound'), (b'X-Error-Message', b'Entry not found'), (b'X-Cache', b'Error from cloudfront'), (b'Via', b'1.1 25738fa57a90cf7f193adbe4dd7bc6e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MAA51-P2'), (b'X-Amz-Cf-Id', b'UtrBpJM-ek0LHVHJPoo5NOyBZc2nXE7fihOlCawYkBSRt6oY09SLJA==')])
+2026-06-21 09:55:51  INFO      httpx — HTTP Request: HEAD https://huggingface.co/facebook/nllb-200-distilled-600M/resolve/refs%2Fpr%2F45/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_body.started request=<Request [b'HEAD']>
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — receive_response_body.complete
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — response_closed.started
+2026-06-21 09:55:51  DEBUG     httpcore.http11 — response_closed.complete
+2026-06-21 09:55:51  INFO      src.transcription.translator — Translation model preloaded successfully.
+2026-06-21 09:55:51  INFO      src.pipeline — 
+2026-06-21 09:55:51  INFO      src.pipeline — Step 2/4: Transcribing audio files
+2026-06-21 09:55:51  INFO      src.transcription.engine — Loading Whisper model 'small' …
+2026-06-21 09:55:54  INFO      src.transcription.engine — Model 'small' ready.
+2026-06-21 09:55:54  INFO      src.transcription.engine — [1/1] Processing Sample-for-alert.wav
+2026-06-21 09:55:54  INFO      src.transcription.engine — Transcribing: Sample-for-alert.wav
+2026-06-21 09:55:56  DEBUG     src.transcription.engine — [UNICODE] Whisper raw text [Sample-for-alert.wav] — len=99, non-ASCII=0, sample="I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  DEBUG     src.transcription.engine — [UNICODE] Translated text [Sample-for-alert.wav] — len=99, non-ASCII=0, sample="I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  INFO      src.transcription.engine — ✓ Sample-for-alert.wav | Lang: English (0%) | Words: 15
+2026-06-21 09:55:56  INFO      src.transcription.engine — Transcription complete: 1/1 files successful.
+2026-06-21 09:55:56  DEBUG     src.pipeline — [UNICODE] Whisper output [Sample-for-alert.wav] — chars: 99, non-ASCII: 0, sample: "I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  DEBUG     src.pipeline — [UNICODE] Translated text [Sample-for-alert.wav] — chars: 99, non-ASCII: 0, sample: "I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  INFO      src.pipeline — 
+2026-06-21 09:55:56  INFO      src.pipeline — Step 3/4: Scanning for keyword alerts
+2026-06-21 09:55:56  WARNING   src.alerts.keyword_detector —   ⚠ KEYWORD ALERT: Sample-for-alert.wav → EMERGENCY, FIRE, SMOKE (3 hit(s))
+2026-06-21 09:55:56  WARNING   src.alerts.keyword_detector — Keyword scan complete: 1 file(s) flagged, 3 total hit(s).
+2026-06-21 09:55:56  INFO      src.pipeline — 
+2026-06-21 09:55:56  INFO      src.pipeline — Step 4/4: Generating report
+2026-06-21 09:55:56  DEBUG     src.reports.builder — [UNICODE] TXT source [Sample-for-alert.wav] — len=99, non-ASCII=0, sample="I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  DEBUG     src.reports.builder — [UNICODE] build_report() return — len=1634, non-ASCII=0, sample='============================================================'
+2026-06-21 09:55:56  DEBUG     src.pipeline — [UNICODE] Final report text (pre-save) — chars: 1634, non-ASCII: 0, sample: '============================================================'
+2026-06-21 09:55:56  DEBUG     src.reports.builder — [UNICODE] save_report() input — len=1634, non-ASCII=0, sample='============================================================'
+2026-06-21 09:55:56  INFO      src.reports.builder — TXT report saved: /Users/babyanvithagmail.com/Downloads/sample/overall_summary_report.txt
+2026-06-21 09:55:56  DEBUG     src.reports.builder — Unicode font selected: /System/Library/Fonts/Supplemental/Arial Unicode.ttf
+2026-06-21 09:55:56  DEBUG     src.reports.builder — PDF font registered from /System/Library/Fonts/Supplemental/Arial Unicode.ttf
+2026-06-21 09:55:56  DEBUG     src.reports.builder — [UNICODE] PDF source [Sample-for-alert.wav] — len=99, non-ASCII=0, sample="I think fire need checking checking. Okay, emergency. There'"
+2026-06-21 09:55:56  DEBUG     src.reports.builder — [UNICODE] PDF safe_msg [Sample-for-alert.wav] — len=207, non-ASCII=0, sample='I think <font color="#C60C0C"><b>fire</b></font> need checki'
+2026-06-21 09:55:56  INFO      src.reports.builder — PDF report saved: /Users/babyanvithagmail.com/Downloads/sample/overall_summary_report.pdf
+2026-06-21 09:55:56  INFO      src.pipeline — 
+2026-06-21 09:55:56  INFO      src.pipeline — ============================================================
+2026-06-21 09:55:56  INFO      src.pipeline —   PIPELINE COMPLETE
+2026-06-21 09:55:56  INFO      src.pipeline — ============================================================
+2026-06-21 09:55:56  INFO      src.pipeline —   Shift        : Day Shift
+2026-06-21 09:55:56  INFO      src.pipeline —   Files        : 1
+2026-06-21 09:55:56  INFO      src.pipeline —   Transcribed  : 1
+2026-06-21 09:55:56  INFO      src.pipeline —   Alerts       : 1 file(s) flagged
+2026-06-21 09:55:56  INFO      src.pipeline —   Report saved : /Users/babyanvithagmail.com/Downloads/sample/overall_summary_report.txt
+2026-06-21 09:55:56  INFO      src.pipeline — ============================================================
+2026-06-21 09:55:56  WARNING   src.pipeline — 
+2026-06-21 09:55:56  WARNING   src.pipeline — ⚠  CRITICAL KEYWORD ALERTS DETECTED — review the report immediately.
+2026-06-21 09:55:56  WARNING   src.pipeline —    • Sample-for-alert.wav → EMERGENCY, FIRE, SMOKE
+2026-06-21 09:55:56  WARNING   src.pipeline — 
+2026-06-21 09:55:56  DEBUG     httpcore.connection — close.started
+2026-06-21 09:55:56  DEBUG     httpcore.connection — close.complete
